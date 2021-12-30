@@ -38,6 +38,7 @@
 
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 
   .front,
@@ -150,7 +151,7 @@
   }
 
   span {
-    background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 1em 0.75em rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 1em 0.75em rgba(255, 255, 255, 0.95);
   }
 </style>
