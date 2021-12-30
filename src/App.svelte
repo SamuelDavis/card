@@ -1,58 +1,47 @@
 <script lang="ts">
   import Card from "./Card.svelte";
-  import { onMount } from "svelte";
+  import Music from "./Music.svelte";
 
-  const VOL_INTERVAL = 100;
-  const VOL_DELTA = 0.015;
-  const VOL_MIN = 0.025;
-  const VOL_MAX = 0.3;
-
+  let active = false;
   let open = false;
-  let controls: HTMLAudioElement;
-  let target = 0;
 
-  function onFocus(e) {
-    e.stopPropagation();
-    open = true;
-    target = VOL_MAX;
+  function onMusicPlaying() {
+    active = true;
   }
-
-  function onBlur() {
-    open = false;
-    target = VOL_MIN;
-  }
-
-  onMount(() => {
-    controls.volume = VOL_MAX / 2;
-  });
-
-  setInterval(() => {
-    if (isNaN(controls?.volume)) return;
-
-    if (controls.volume < target)
-      controls.volume = Math.min(VOL_MAX, controls.volume + VOL_DELTA);
-    else if (controls.volume > target)
-      controls.volume = Math.max(VOL_MIN, controls.volume - VOL_DELTA);
-  }, VOL_INTERVAL);
 </script>
 
-<svelte:body on:click={onBlur} />
+{#if !active}
+  <h1>Click somewhere!</h1>
+{/if}
 
-<main on:click={onFocus} on:mouseenter={onFocus} on:mouseleave={onBlur}>
-  <Card {open} />
-  <audio bind:this={controls} loop autoplay>
-    <source src="music.mp3" type="audio/mp3" />
-  </audio>
+<main
+  class:active
+  on:click={() => (open = !open)}
+  on:mouseenter={() => (open = true)}
+  on:mouseleave={() => (open = false)}
+>
+  <Card open={active && open} />
 </main>
+<Music on:playing={onMusicPlaying} target={open ? 1 : 0} />
 
 <style lang="css">
   :global(body) {
     margin: 0;
+    background-color: burlywood;
     height: 100vh;
     width: 100vw;
     display: grid;
     place-content: center;
+  }
 
-    background-color: darkgray;
+  main {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 3s;
+  }
+
+  main.active {
+    opacity: 1;
+    pointer-events: all;
   }
 </style>
