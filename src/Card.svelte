@@ -24,11 +24,11 @@
   .card {
     position: relative;
 
-    width: 250px;
-    height: 350px;
+    width: 16rem;
+    height: 22rem;
 
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.15);
-    perspective: 1500px;
+    perspective: 94rem;
 
     transform: rotateZ(3deg);
   }
@@ -129,10 +129,14 @@
     background-image: url("/pg1-back.jpg");
   }
 
+  .pg1 .back {
+    display: flex;
+    justify-content: center;
+  }
+
   .pg1 .back span {
     position: absolute;
-    top: 325px;
-    left: 20px;
+    bottom: 1rem;
   }
 
   .pg2 .front {
@@ -141,7 +145,12 @@
 
   .pg2 .front span {
     position: absolute;
-    top: 160px;
-    left: 10px;
+    top: 10rem;
+    left: 1rem;
+  }
+
+  span {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 1em 0.25em rgba(255, 255, 255, 0.25);
   }
 </style>
