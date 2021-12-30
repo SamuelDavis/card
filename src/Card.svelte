@@ -4,17 +4,15 @@
 
 <article class:open class="card" {...$$props}>
   <section class="page pg1">
-    <div class="front">
-      <h1>This is the front.</h1>
-    </div>
+    <div class="front" />
     <div class="back">
-      <p>This is page 1.</p>
+      <span>Think all the stories we'll learn...</span>
     </div>
   </section>
 
   <section class="page pg2">
     <div class="front">
-      <p>This is page 2.</p>
+      <span>...as we write our own.</span>
     </div>
     <div class="back">
       <small>This is the back.</small>
@@ -116,6 +114,33 @@
 
   .front,
   .back {
-    padding: 1rem;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+  }
+
+  .pg1 .front {
+    background-image: url("/pg1-front.jpg");
+  }
+
+  .pg1 .back {
+    background-image: url("/pg1-back.jpg");
+  }
+
+  .pg1 .back span {
+    position: absolute;
+    top: 325px;
+    left: 20px;
+  }
+
+  .pg2 .front {
+    background-image: url("/pg2-front.jpg");
+  }
+
+  .pg2 .front span {
+    position: absolute;
+    top: 160px;
+    left: 10px;
   }
 </style>
