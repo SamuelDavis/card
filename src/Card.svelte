@@ -150,7 +150,7 @@
   }
 
   span {
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 1em 0.25em rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 1em 0.75em rgba(255, 255, 255, 0.75);
   }
 </style>

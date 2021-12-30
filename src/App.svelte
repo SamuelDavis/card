@@ -34,6 +34,12 @@
     place-content: center;
   }
 
+  @media only screen and (orientation: portrait) {
+    :global(body) {
+      transform: rotateZ(90deg);
+    }
+  }
+
   main {
     opacity: 0;
     pointer-events: none;
