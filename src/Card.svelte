@@ -28,6 +28,9 @@
     height: 350px;
 
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.15);
+    perspective: 1500px;
+
+    transform: rotateZ(3deg);
   }
 
   .page {
@@ -35,8 +38,6 @@
 
     width: 100%;
     height: 100%;
-
-    perspective: 1500px;
   }
 
   .front,
@@ -65,7 +66,7 @@
 
   .card.open {
     background-color: red;
-    transform: translateX(50%);
+    transform: translateX(50%) rotateZ(-1deg);
   }
 
   .card.open .pg1 {
