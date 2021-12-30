@@ -10,10 +10,6 @@
   }
 </script>
 
-{#if !active}
-  <h1>Click somewhere!</h1>
-{/if}
-
 <main
   class:active
   on:click={() => (open = !open)}
@@ -35,7 +31,7 @@
   }
 
   @media only screen and (orientation: portrait) {
-    :global(body) {
+    main {
       transform: rotateZ(90deg);
     }
   }
